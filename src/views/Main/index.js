@@ -4,8 +4,10 @@ import {
 } from 'react-navigation'
 
 import Home from './Home';
+import ThongBaoCuoc from './ThongBaoCuoc';
 const MainNavigation = createStackNavigator({
-  home:Home
+  home:Home,
+  ThongBaoCuoc:ThongBaoCuoc
 }, {
   initialRouteName: 'home',
   headerMode: 'none'

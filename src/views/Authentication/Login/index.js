@@ -31,11 +31,19 @@ export default class Login extends Component {
       })
     }).then((response) => response.json())
       .then((responseJson) => {
-       console.log('then');
-       alert(responseJson.result);
+       //console.log('then');
+       //alert(responseJson.result);
+       if(responseJson.result === '1')
+        {
+          //this.props.navigation.navigate('ThongBaoCuoc', { Email: UserEmail });
+          this.props.navigation.navigate('ThongBaoCuoc');
+        }
+        else{
+          alert('Login failed');
+        }
       }).catch((error) => {
-        console.log('loi');
-        console.log(error.message);
+        alert('loi');
+        alert(error.message);
       });
 
 
@@ -77,6 +85,7 @@ export default class Login extends Component {
         />
 
         <Button title="Click Here To Login" onPress={this.UserLoginFunction} color="#2196F3" />
+        <Button title="Home" onPress={()=>{this.props.navigation.navigate('ThongBaoCuoc')}} color="#2196F3" />
 
         <Text></Text>
 
